@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: Back Issues
+permalink: /archive/
+---
+<div class="archive">
+  <h1 class="archive__title">Back Issues</h1>
+  <p class="archive__intro">Everything published, oldest to newest.</p>
+  <ul class="archive__list">
+    {% for item in collections.articles %}
+      <li class="archive__item">
+        <a href="{{ item.url }}">{{ item.data.title }}</a>
+        <span class="archive__item-date">{{ item.data.date | readableDate }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
