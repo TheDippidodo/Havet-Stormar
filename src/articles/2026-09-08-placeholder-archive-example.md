@@ -1,9 +1,7 @@
 ---
 title: Personal notebook
 date: 2026-09-24T11:26:00.000+02:00
-deck: This is a personal repository cosplaying as a magazine.  a conventional
-  publication with an independent editorial operation; it's essentially one
-  person's curated worldview dressed in magazine clothing.
+deck: Call it "newsletter" if you like.
 author: ""
 featured: false
 image: https://picsum.photos/seed/dispatch-five/900/675
