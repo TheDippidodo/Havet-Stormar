@@ -7,25 +7,30 @@ title: null
 {% set secondaries = fp.secondaries %}
 
 <div class="edition">
-  <section class="lead-story">
-    {% if lead.data.image %}
-      <img class="lead-story__image" src="{{ lead.data.image }}" alt="{{ lead.data.image_alt | default('') }}">
-    {% endif %}
-    <h1 class="lead-story__headline"><a href="{{ lead.url }}">{{ lead.data.title }}</a></h1>
-    {% if lead.data.deck %}<p class="lead-story__deck">{{ lead.data.deck }}</p>{% endif %}
-    <p class="byline">By {{ lead.data.author | default("The Dispatch") }} &middot; {{ lead.data.date | readableDate }}</p>
-  </section>
+  <div class="edition__top-row">
+    <section class="lead-story">
+      {% if lead.data.image %}
+        <img class="lead-story__image" src="{{ lead.data.image }}" alt="{{ lead.data.image_alt | default('') }}">
+      {% endif %}
+      <h1 class="lead-story__headline"><a href="{{ lead.url }}">{{ lead.data.title }}</a></h1>
+      {% if lead.data.deck %}<p class="lead-story__deck">{{ lead.data.deck }}</p>{% endif %}
+      <p class="byline">By {{ lead.data.author | default("The Dispatch") }} &middot; {{ lead.data.date | readableDate }}</p>
+    </section>
 
-  <section class="secondary-stories">
-    {% for item in secondaries %}
-      <article class="secondary-story">
-        {% if item.data.image %}
-          <img class="secondary-story__image" src="{{ item.data.image }}" alt="{{ item.data.image_alt | default('') }}">
-        {% endif %}
-        <h2 class="secondary-story__headline"><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
-        {% if item.data.deck %}<p class="secondary-story__deck">{{ item.data.deck }}</p>{% endif %}
-        <p class="byline">{{ item.data.date | readableDate }}</p>
-      </article>
-    {% endfor %}
-  </section>
+    <aside class="secondary-list">
+      <p class="secondary-list__label">Also Today</p>
+      {% for item in secondaries %}
+        <article class="secondary-item">
+          {% if item.data.image %}
+            <img class="secondary-item__image" src="{{ item.data.image }}" alt="{{ item.data.image_alt | default('') }}">
+          {% endif %}
+          <div class="secondary-item__body">
+            <h2 class="secondary-item__headline"><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
+            {% if item.data.deck %}<p class="secondary-item__deck">{{ item.data.deck }}</p>{% endif %}
+            <p class="byline">{{ item.data.date | readableDate }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </aside>
+  </div>
 </div>
