@@ -2,7 +2,7 @@
 title: Personal notebook
 date: 2026-09-24T11:26:00.000+02:00
 deck: Call it "newsletter" if you like.
-author: ""
+author: Kevin
 featured: false
 image: https://picsum.photos/seed/dispatch-five/900/675
 image_alt: Placeholder image — replace via the Image field in the editor
